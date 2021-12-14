@@ -53,12 +53,12 @@ namespace MinhaAgendaMinhavida.Repository
             {
 
                 string sQuery = $@"SELECT [ID]
-                                    ,[Titulo]
-                                    ,[Descricao]
-                                    ,[DataInicio]
-                                    ,[DataTermino]
-                                FROM [dbo].[Agenda]
-                                WHERE ID = @id;";
+                                       ,[Titulo]
+                                       ,[Descricao]
+                                       ,[DataInicio]
+                                       ,[DataTermino]
+                                   FROM [dbo].[Agenda]
+                                   WHERE ID = @id;";
 
                 conn.Open();
                 return await conn.QueryFirstOrDefaultAsync<Agenda>(sQuery, new { id });
